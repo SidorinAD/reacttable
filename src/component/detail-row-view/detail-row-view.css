@@ -1,0 +1,11 @@
+.detailrowview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+textarea {
+  resize: none;
+  width: 650px;
+  height: 100px;
+}

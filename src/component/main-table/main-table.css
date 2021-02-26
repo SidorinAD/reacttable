@@ -1,10 +1,12 @@
 body {
   font-family: 'open sans', sans-serif;
   font-size: 16px;
+  
 }
 
 table {
-  width: 100%;
+  width: 100vh;
+  height: 100vh;
   border-collapse: collapse;
 }
 
@@ -46,3 +48,4 @@ tbody td {
 tbody tr:hover {
   background-color: #eee;
 }
+
