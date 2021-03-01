@@ -4,20 +4,14 @@ import './main-table.css';
 import {DetailRowView} from '../detail-row-view/detail-row-view';
 
 
-const MainTable = (props) => {
+const MainTable = ({data}) => {
   
-  const { items, requestSort, sortConfig } = useSortableData(props);
+  const { getClassNamesFor, requestSort } = useSortableData(data);
   
   const [ detailRowData, setDetailRowData] = useState();
 
   const detailRowDataProvider = detailRowData;
   
-  const getClassNamesFor = (name) => {
-    if (!sortConfig) {
-      return;
-    }
-    return sortConfig.key === name ? sortConfig.direction : undefined;
-  };
   return (
     <div className='main-table-container'>
       <table>
@@ -56,13 +50,13 @@ const MainTable = (props) => {
           </tr>
         </thead>
         <tbody>
-          {items.map((item) => (
-            <tr key={item.id + item.phone} onClick={() => setDetailRowData(item)}>
-              <td>{item.id}</td>
-              <td>{item.firstName}</td>
-              <td>{item.lastName}</td>
-              <td>{item.email}</td>
-              <td>{item.phone}</td>
+          {data.map((person) => (
+            <tr key={person.id + person.phone} onClick={() => setDetailRowData(person)}>
+              <td>{person.id}</td>
+              <td>{person.firstName}</td>
+              <td>{person.lastName}</td>
+              <td>{person.email}</td>
+              <td>{person.phone}</td>
             </tr>
           ))}
         </tbody>

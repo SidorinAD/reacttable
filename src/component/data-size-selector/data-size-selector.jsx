@@ -26,9 +26,7 @@ const DataSizeSelector = () => {
       )}
       {status === 'error' &&<div>{error}</div>}
       {status === 'fetching' && <Loader></Loader>}
-      {status === 'fetched' &&  <>
-                                  <MainTable props={data}></MainTable>
-                                </>}
+      {status === 'fetched' &&  <><MainTable data={data}></MainTable></>}
     </div>
   )
 }
